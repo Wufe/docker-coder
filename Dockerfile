@@ -16,9 +16,9 @@ RUN apt-get update && \
 	wget https://dl.google.com/go/go1.13.4.linux-amd64.tar.gz -O go.tar.gz && \
 	tar -xvf go.tar.gz && \
 	mv go /usr/local && \
-	echo "export GOROOT=/usr/local/go" >> /home/coder/.zshrc && \
-	echo "export GOPATH=$HOME/Go" >> /home/coder/.zshrc && \
-	echo "export PATH=$GOPATH/bin:$GOROOT/bin:$PATH" >> /home/coder/.zshrc && \
+	echo "\nexport GOROOT=/usr/local/go" >> /home/coder/.zshrc && \
+	echo "export GOPATH=\$HOME/Go" >> /home/coder/.zshrc && \
+	echo "export PATH=\$GOPATH/bin:\$GOROOT/bin:\$PATH" >> /home/coder/.zshrc && \
 	/usr/local/go/bin/go version && \
 	/usr/local/go/bin/go env && \
 	rm -rf /opt/go
